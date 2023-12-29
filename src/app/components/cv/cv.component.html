@@ -1,0 +1,29 @@
+<main class="p-4">
+  <h1>Hugo Feuillâtre</h1>
+  <!--<article>
+    <header>Synthèse</header>
+    <tuple>
+      <span class="label">Titre</span>
+      <span>Développeur web fullstack</span>
+    </tuple>
+    <tuple>
+    	<span class="label">Nombre d'années d'expérience</span>
+    	<span>7</span>
+    </tuple>
+    <tuple>
+    	<span class="label">Savoir-faire</span>
+    	<span>Conception et développement web fullstack, contribution au cycle complet des projets BUILD & RUN, forte appétence à la qualité de code</span>
+    </tuple>
+    <tuple>
+    	<span class="label">Savoir-être</span>
+    	<span>Curieux, pédagogue et polyvalent</span>
+    </tuple>
+  </article>-->
+  <article class="container job">
+    <div class="row">
+      <div class="col" *ngFor="let job of jobs">
+        <job [job]="job"></job>
+      </div>
+    </div>
+  </article>
+</main>

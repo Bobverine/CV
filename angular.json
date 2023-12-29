@@ -4,6 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "cv": {
+      "i18n": {
+        "sourceLocale": "fr-FR"
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -30,6 +33,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
               "src/styles.scss"
             ],
             "scripts": []

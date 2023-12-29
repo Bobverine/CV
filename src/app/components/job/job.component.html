@@ -1,0 +1,20 @@
+<div class="job border rounded p-3">
+    <div class="">
+        <span class="title">{{ job.title | uppercase }}</span>
+    </div>
+    <div class="">
+        <span class="client">{{ job.client }}</span>
+    </div>
+    <div class="">
+        <span class="text-secondary">
+            {{ cityAndYearPeriod }}
+        </span>
+    </div>
+    <div class="">
+        <ul>
+            <li *ngFor="let task of job.tasks">
+                {{ task }}
+            </li>
+        </ul>
+    </div>
+</div>
