@@ -1,29 +1,24 @@
-<main class="p-4">
-  <h1>Hugo Feuillâtre</h1>
-  <!--<article>
-    <header>Synthèse</header>
-    <tuple>
-      <span class="label">Titre</span>
-      <span>Développeur web fullstack</span>
-    </tuple>
-    <tuple>
-    	<span class="label">Nombre d'années d'expérience</span>
-    	<span>7</span>
-    </tuple>
-    <tuple>
-    	<span class="label">Savoir-faire</span>
-    	<span>Conception et développement web fullstack, contribution au cycle complet des projets BUILD & RUN, forte appétence à la qualité de code</span>
-    </tuple>
-    <tuple>
-    	<span class="label">Savoir-être</span>
-    	<span>Curieux, pédagogue et polyvalent</span>
-    </tuple>
-  </article>-->
-  <article class="container job">
-    <div class="row">
-      <div class="col" *ngFor="let job of jobs">
-        <job [job]="job"></job>
+<main class="p-5">
+  <h1 class="mb-4 text-uppercase">Hugo Feuillâtre</h1>
+  <div class="row">
+    <section class="col-6 section">
+      <h4 class="section-title">Formation</h4>
+      <div class="section-list">
+        @for (training of trainings; track $index) {
+          <app-training class="training" [training]="training"></app-training>
+        }
       </div>
-    </div>
-  </article>
+    </section>
+    <section class="col-6 section">
+      <h4 class="section-title">Expérience professionelle</h4>
+      <div class="section-list">
+        @for (experience of experiences; track $index) {
+          <app-experience
+            class="experience"
+            [experience]="experience"
+          ></app-experience>
+        }
+      </div>
+    </section>
+  </div>
 </main>

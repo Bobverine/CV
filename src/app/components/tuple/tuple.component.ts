@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'tuple',
+  selector: 'app-tuple',
   standalone: true,
   imports: [],
   templateUrl: './tuple.component.html',
-  styleUrl: './tuple.component.scss'
+  styleUrl: './tuple.component.scss',
 })
-export class TupleComponent {
-
-}
+export class TupleComponent {}

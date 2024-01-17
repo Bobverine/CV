@@ -1,0 +1,9 @@
+<h5 class="title">{{ experience.title }}</h5>
+<h6 class="subtitle">{{ experience.company }}</h6>
+<span class="address-date"
+  >{{ experience.address.city }}, {{ experience.address.country }} |
+  {{ date }}</span
+>
+<ul class="list">
+  <li *ngFor="let task of experience.tasks">{{ task }}</li>
+</ul>
