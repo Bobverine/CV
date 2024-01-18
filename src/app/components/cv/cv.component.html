@@ -1,16 +1,33 @@
-<main class="p-5">
-  <h1 class="mb-4 text-uppercase">Hugo Feuillâtre</h1>
-  <div class="row">
-    <section class="col-6 section">
-      <h4 class="section-title">Formation</h4>
+<div class="mb-4">
+  <div>
+    <span class="name">{{ profile.firstname }} {{ profile.lastname }}</span>
+    <span class="age">{{ profile.age }} ans</span>
+  </div>
+  <div>
+    <span class="profile-title">{{ profile.title }}</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-5">
+    <section class="section">
+      <app-coordinates [coordinates]="coordinates"></app-coordinates>
+    </section>
+    <section class="section">
+      <span class="section-title">Compétences</span>
+      <app-skills class="skills" [skills]="skills"></app-skills>
+    </section>
+  </div>
+  <div class="col-7">
+    <section class="section">
+      <span class="section-title">Formation</span>
       <div class="section-list">
         @for (training of trainings; track $index) {
           <app-training class="training" [training]="training"></app-training>
         }
       </div>
     </section>
-    <section class="col-6 section">
-      <h4 class="section-title">Expérience professionelle</h4>
+    <section class="section">
+      <span class="section-title">Expérience professionelle</span>
       <div class="section-list">
         @for (experience of experiences; track $index) {
           <app-experience
@@ -21,4 +38,4 @@
       </div>
     </section>
   </div>
-</main>
+</div>

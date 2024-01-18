@@ -1,11 +1,8 @@
+import { Period } from '../utils/period';
+
 export interface Job {
   title: string;
-  period: {
-    beginYear: Date;
-    endYear: Date;
-    duration: number;
-    durationUnit: 'M' | 'Y';
-  };
+  period: Period;
   client: string;
   project: string;
   description: string;

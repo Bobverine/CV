@@ -1,13 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Training } from '../../models/cv/training';
-import { EPeriod, Period } from '../../models/utils/period';
+import { Component, Input, OnInit } from "@angular/core";
+import { Training } from "../../models/cv/training";
+import { EPeriod, Period } from "../../models/utils/period";
 
 @Component({
-  selector: 'app-training',
+  selector: "app-training",
   standalone: true,
   imports: [],
-  templateUrl: './training.component.html',
-  styleUrl: './training.component.scss',
+  templateUrl: "./training.component.html",
+  styleUrl: "./training.component.scss",
 })
 export class TrainingComponent implements OnInit {
   @Input()
@@ -30,7 +30,7 @@ export class TrainingComponent implements OnInit {
       case EPeriod.STRING:
         return date.value;
       default:
-        return '';
+        return "";
     }
   }
 }

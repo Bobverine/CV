@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { CvComponent } from "./cv.component";
+import { CoordinatesComponent } from "./coordinates.component";
 
-describe("CvComponent", () => {
-  let component: CvComponent;
-  let fixture: ComponentFixture<CvComponent>;
+describe("CoordinatesComponent", () => {
+  let component: CoordinatesComponent;
+  let fixture: ComponentFixture<CoordinatesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CvComponent],
+      imports: [CoordinatesComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CvComponent);
+    fixture = TestBed.createComponent(CoordinatesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

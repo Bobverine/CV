@@ -1,4 +1,6 @@
 export interface Profile {
+  firstname: string;
+  lastname: string;
   title: string;
   age: number;
   yearsOfExperience: number;

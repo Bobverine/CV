@@ -1,14 +1,14 @@
-import { NgFor } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { Experience } from '../../models/cv/experience';
-import { EPeriod, Period } from '../../models/utils/period';
+import { NgFor } from "@angular/common";
+import { Component, Input, OnInit } from "@angular/core";
+import { Experience } from "../../models/cv/experience";
+import { EPeriod, Period } from "../../models/utils/period";
 
 @Component({
-  selector: 'app-experience',
+  selector: "app-experience",
   standalone: true,
   imports: [NgFor],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss',
+  templateUrl: "./experience.component.html",
+  styleUrl: "./experience.component.scss",
 })
 export class ExperienceComponent implements OnInit {
   @Input()
@@ -31,7 +31,7 @@ export class ExperienceComponent implements OnInit {
       case EPeriod.STRING:
         return date.value;
       default:
-        return '';
+        return "";
     }
   }
 }

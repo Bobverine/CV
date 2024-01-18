@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { Job } from '../../models/dc/job';
+import { CommonModule } from "@angular/common";
+import { Component, Input, OnInit } from "@angular/core";
+import { Job } from "../../models/dc/job";
 
 @Component({
-  selector: 'app-job',
+  selector: "app-job",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './job.component.html',
-  styleUrl: './job.component.scss',
+  templateUrl: "./job.component.html",
+  styleUrl: "./job.component.scss",
 })
 export class JobComponent implements OnInit {
   @Input()

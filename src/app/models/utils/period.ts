@@ -10,6 +10,8 @@ interface IntervalPeriod {
   periodType: EPeriod.INTERVAL | EPeriod.MONTH_INTERVAL | EPeriod.YEAR_INTERVAL;
   from: string;
   to: string;
+  duration?: number;
+  durationUnit?: 'M' | 'Y';
 }
 
 interface DatePeriod {
