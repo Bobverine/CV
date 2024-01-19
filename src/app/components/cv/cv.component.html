@@ -16,8 +16,6 @@
       <span class="section-title">Compétences</span>
       <app-skills class="skills" [skills]="skills"></app-skills>
     </section>
-  </div>
-  <div class="col-7">
     <section class="section">
       <span class="section-title">Formation</span>
       <div class="section-list">
@@ -26,15 +24,20 @@
         }
       </div>
     </section>
+  </div>
+  <div class="col-7">
     <section class="section">
       <span class="section-title">Expérience professionelle</span>
       <div class="section-list">
-        @for (experience of experiences; track $index) {
+        @for (job of jobs; track $index) {
+          <app-job class="job" [job]="job"></app-job>
+        }
+        <!-- @for (experience of experiences; track $index) {
           <app-experience
             class="experience"
             [experience]="experience"
           ></app-experience>
-        }
+        } -->
       </div>
     </section>
   </div>

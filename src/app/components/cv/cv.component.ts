@@ -9,6 +9,7 @@ import { Job } from "../../models/dc/job";
 import { EPeriod } from "../../models/utils/period";
 import { CoordinatesComponent } from "../coordinates/coordinates.component";
 import { ExperienceComponent } from "../experience/experience.component";
+import { JobComponent } from "../job/job.component";
 import { SkillsComponent } from "../skills/skills.component";
 import { TrainingComponent } from "../training/training.component";
 
@@ -20,6 +21,7 @@ import { TrainingComponent } from "../training/training.component";
     ExperienceComponent,
     SkillsComponent,
     CoordinatesComponent,
+    JobComponent,
   ],
   templateUrl: "./cv.component.html",
   styleUrl: "./cv.component.scss",
@@ -27,7 +29,7 @@ import { TrainingComponent } from "../training/training.component";
 export class CvComponent {
   public jobs: Job[] = [
     {
-      title: "Développeur web fullstack",
+      title: "Développeur web frontend",
       period: {
         periodType: EPeriod.YEAR_INTERVAL,
         from: "2022",
@@ -43,16 +45,21 @@ export class CvComponent {
         "Agile ~15 personnes, CDP, PPOs / testeurs, 10 développeurs",
       tasks: [
         "Développement des portlets Rachat et Souscription",
-        "Ecriture de mappers REST / SOAP",
+        "Développement de formulaire multi-étapes et système de cache",
+        "Intégration des règles métier de l'assurance vie",
         "Correction d'anomalies",
         "Accompagnement de juniors",
       ],
       toolsAndTechnologies: [
         "Java / Gradle / Liferay / VueJS / SCSS / Yarn / IntelliJ / Gitlab",
       ],
+      address: {
+        city: "Nantes",
+        country: "France",
+      },
     },
     {
-      title: "Développeur web fullstack",
+      title: "Développeur web frontend",
       period: {
         periodType: EPeriod.YEAR_INTERVAL,
         from: "2020",
@@ -63,16 +70,22 @@ export class CvComponent {
       client: "Wiztivi",
       project: "Altice & Vodafone",
       description:
-        "Développement des interfaces multi-écrans pour décodeurs et Smart TV. \
-        Fonctionnalités : VOD, pause et enregistrement du direct, choix de langue audio et sous-titres",
+        "Développement des interfaces multi-écrans pour décodeurs et Smart TV",
       teamsAndMethods:
         "Agile - 6 Equipes de 5 développeurs dont un Tech Lead + un testeur",
       tasks: [
-        "Développement web en Javascript / Node.JS",
-        "Correction d'anomalies",
+        "Développement et maintenance en Javascript et Node.JS du périmètre de la feature team",
+        "VOD, pause du direct, clavier virtuel, choix de langue audio et sous-titres",
+        "Présent dans une dizaine de pays d'europe",
         "Refactorisation du code",
+        "Amélioration de la qualité de code avec SonarQube et les bonnes pratiques de développement",
+        "Correction d'anomalies",
       ],
       toolsAndTechnologies: ["Javascript / NodeJS"],
+      address: {
+        city: "Carquefou",
+        country: "France",
+      },
     },
     {
       title: "Développeur web fullstack",
@@ -89,12 +102,16 @@ export class CvComponent {
         "Système de vidéosurveillance plug-and-play pour particuliers",
       teamsAndMethods: "Agile - équipe de 4 développeurs",
       tasks: [
-        "Développement du pilotage de caméra à distance",
+        "Développement du gestionnaire de caméras et de leur pilotage à distance",
         "Refactorisation du code",
         "Correction d'anomalies",
         "étude de migration vers de nouveaux frameworks de développement",
       ],
       toolsAndTechnologies: ["Java 8 / Javascript"],
+      address: {
+        city: "Orvault",
+        country: "France",
+      },
     },
     {
       title: "Développeur web fullstack",
@@ -111,14 +128,20 @@ export class CvComponent {
         "Application web permettant d'observer en temps réel les indices de performances des lignes de production",
       teamsAndMethods: "Agile - équipe de 6 développeurs",
       tasks: [
-        "Développement d'une librairie générant plusieurs types de graphes en SVG",
-        "Développement d'une librairie de tableaux complexes en vue arborescente et triables",
+        "Développement d'une librairie Angular générant les graphes en SVG",
+        "Développement d'une librairie Angular de tableaux complexes en vue arborescente et triables",
+        "évolution du BE sous Spring Boot",
+        "écriture de requêtes ElasticSearch",
         "écriture de tests front-end et back-end",
         "Correction de bugs et d'anomalies",
       ],
       toolsAndTechnologies: [
         "Angular 9 / Java 8 / Spring / D3js / ElasticSearch / Kafka / Docker / Jenkins / SonarQube / JUnit / TestNG",
       ],
+      address: {
+        city: "La-Chapelle-sur-Erdre",
+        country: "France",
+      },
     },
     {
       title: "Développeur web frontend",
@@ -142,6 +165,10 @@ export class CvComponent {
         "écriture de la documentation",
       ],
       toolsAndTechnologies: ["Angular 7 / D3js / HighCharts / Bitbucket"],
+      address: {
+        city: "Carquefou",
+        country: "France",
+      },
     },
     {
       title: "Développeur web frontend",
@@ -157,8 +184,17 @@ export class CvComponent {
       description:
         "Outil d'aide à la décision pour l'optimisation de la consommation de carburant d'un navire",
       teamsAndMethods: "Kanban - Binôme",
-      tasks: [""],
+      tasks: [
+        "Refonte de l'ergonomie de l'interface avec le langage fonctionnelle Elm lang",
+        "Développement du tableau de comparaison des indices de performances",
+        "Retrait du Material Design au profit d'un CSS maison",
+        "Développement d'un script Python générant des rapports CSV depuis un BDD PostgreSQL",
+      ],
       toolsAndTechnologies: ["Angular 7 / D3js / HighCharts / Bitbucket"],
+      address: {
+        city: "Bouguenais",
+        country: "France",
+      },
     },
   ];
 

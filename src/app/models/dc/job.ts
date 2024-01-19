@@ -1,4 +1,5 @@
-import { Period } from '../utils/period';
+import { Address } from "../utils/address";
+import { Period } from "../utils/period";
 
 export interface Job {
   title: string;
@@ -9,4 +10,5 @@ export interface Job {
   teamsAndMethods: string;
   tasks: string[];
   toolsAndTechnologies: string[];
+  address: Address;
 }

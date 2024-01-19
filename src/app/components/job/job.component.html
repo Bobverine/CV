@@ -1,18 +1,26 @@
-<div class="job border rounded p-3">
-  <div class="">
+<div class="d-flex justify-content-between">
+  <div>
     <span class="title">{{ job.title }}</span>
   </div>
-  <div class="">
-    <span class="client">{{ job.client | uppercase }}</span>
-  </div>
-  <div class="">
-    <span class="text-secondary">
-      {{ cityAndYearPeriod }}
-    </span>
-  </div>
-  <div class="">
-    <ul>
-      <li *ngFor="let task of job.tasks">{{ task }}</li>
-    </ul>
+  <div class="client-address">
+    <span class="subtitle">{{ job.client }}</span>
+    <i class="bi bi-geo-alt"></i>
+    <span class="address">
+      {{ job.address.city }}, {{ job.address.country }}</span
+    >
   </div>
 </div>
+<div class="d-flex justify-content-between">
+  <div>
+    <span class="project">{{ job.project }}</span>
+  </div>
+  <div>
+    <span class="date">{{ date }}</span>
+  </div>
+</div>
+<div>
+  <p>{{ job.description }}</p>
+</div>
+<ul class="list">
+  <li *ngFor="let task of job.tasks">{{ task | capitalize }}</li>
+</ul>

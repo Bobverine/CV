@@ -1,9 +1,15 @@
-<span class="title">{{ experience.title }}</span>
-<span class="subtitle">{{ experience.company }}</span>
-<span class="address-date"
-  >{{ experience.address.city }}, {{ experience.address.country }} |
-  {{ date }}</span
->
+<div>
+  <span class="title">{{ experience.title }}</span>
+</div>
+<div>
+  <span class="subtitle">{{ experience.company }}</span>
+</div>
+<div>
+  <span class="address date"
+    >{{ experience.address.city }}, {{ experience.address.country }} |
+    {{ date }}</span
+  >
+</div>
 <ul class="list">
   <li *ngFor="let task of experience.tasks">{{ task }}</li>
 </ul>
