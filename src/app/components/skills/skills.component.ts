@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Skill } from "../../models/cv/skill";
+import { ESkill, Skill } from "../../models/cv/skill";
 
 @Component({
   selector: "app-skills",
@@ -13,4 +13,6 @@ export class SkillsComponent {
   skills!: Skill[];
 
   ratingCount: [] = [].constructor(4);
+
+  skillTypes = ESkill;
 }

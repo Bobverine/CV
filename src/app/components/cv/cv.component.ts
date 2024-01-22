@@ -1,9 +1,8 @@
 import { Component } from "@angular/core";
 import { Coordinates } from "../../models/cv/coordinates";
 import { Experience } from "../../models/cv/experience";
-import { Language } from "../../models/cv/language";
 import { Profile } from "../../models/cv/profile";
-import { Skill } from "../../models/cv/skill";
+import { ESkill, Skill } from "../../models/cv/skill";
 import { Training } from "../../models/cv/training";
 import { Job } from "../../models/dc/job";
 import { EPeriod } from "../../models/utils/period";
@@ -27,7 +26,7 @@ import { TrainingComponent } from "../training/training.component";
   styleUrl: "./cv.component.scss",
 })
 export class CvComponent {
-  public jobs: Job[] = [
+  jobs: Job[] = [
     {
       title: "Développeur web frontend",
       period: {
@@ -76,9 +75,9 @@ export class CvComponent {
       tasks: [
         "Développement et maintenance en Javascript et Node.JS du périmètre de la feature team",
         "VOD, pause du direct, clavier virtuel, choix de langue audio et sous-titres",
-        "Présent dans une dizaine de pays d'europe",
         "Refactorisation du code",
-        "Amélioration de la qualité de code avec SonarQube et les bonnes pratiques de développement",
+        "Amélioration de la qualité de code avec SonarQube",
+        "Mise en place des bonnes pratiques de développement",
         "Correction d'anomalies",
       ],
       toolsAndTechnologies: ["Javascript / NodeJS"],
@@ -133,7 +132,7 @@ export class CvComponent {
         "évolution du BE sous Spring Boot",
         "écriture de requêtes ElasticSearch",
         "écriture de tests front-end et back-end",
-        "Correction de bugs et d'anomalies",
+        "Correction d'anomalies",
       ],
       toolsAndTechnologies: [
         "Angular 9 / Java 8 / Spring / D3js / ElasticSearch / Kafka / Docker / Jenkins / SonarQube / JUnit / TestNG",
@@ -155,7 +154,7 @@ export class CvComponent {
       client: "ADP",
       project: "Benchmark DC",
       description:
-        "Site de référence de salaire avec filtrage par plusieurs découpages administratifs, secteur d'activité, taille d'entreprise",
+        "Site de référence de salaire avec filtrage par découpages administratifs, secteur d'activité, taille d'entreprise",
       teamsAndMethods: "Autonome - accompagnement ponctuel d'un alternant",
       tasks: [
         "Développement de l'IHM avec Angular et de la carte avec D3js",
@@ -198,7 +197,7 @@ export class CvComponent {
     },
   ];
 
-  public trainings: Training[] = [
+  trainings: Training[] = [
     {
       title: "Formation d'ingénieur en informatique & réseaux",
       school: "ESIPE",
@@ -212,6 +211,9 @@ export class CvComponent {
         to: "2018",
       },
     },
+  ];
+
+  oldTrainings: Training[] = [
     {
       title: "DUT Informatique",
       school: "IUT Sénart-Fontainebleau",
@@ -239,7 +241,7 @@ export class CvComponent {
     },
   ];
 
-  public experiences: Experience[] = [
+  experiences: Experience[] = [
     {
       title: "Apprenti ingénieur",
       company: "TSEI",
@@ -291,13 +293,13 @@ export class CvComponent {
     },
   ];
 
-  public coordinates: Coordinates = {
+  coordinates: Coordinates = {
     phone: "+33 6 07 47 03 38",
     email: "hugo.feuillatre@gmail.com",
     city: "Nantes",
   };
 
-  public profile: Profile = {
+  profile: Profile = {
     firstname: "Hugo",
     lastname: "Feuillâtre",
     title: "Développeur web Fullstack",
@@ -309,15 +311,11 @@ export class CvComponent {
     mobility: "Nantes",
   };
 
-  public skills: Skill[] = [
-    {
-      label: "Angular",
-      rating: 3,
-    },
-    { label: "VueJS", rating: 3 },
-    { label: "Java", rating: 3 },
-    { label: "Docker", rating: 2 },
+  skills: Skill[] = [
+    { skillType: ESkill.RATING, label: "Angular", rating: 3 },
+    { skillType: ESkill.RATING, label: "VueJS", rating: 3 },
+    { skillType: ESkill.RATING, label: "Java", rating: 3 },
+    { skillType: ESkill.RATING, label: "Docker", rating: 2 },
+    { skillType: ESkill.NOTE, label: "Anglais", note: "B2" },
   ];
-
-  public language: Language = { label: "Anglais", rating: "B2" };
 }

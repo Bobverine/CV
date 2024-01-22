@@ -1,18 +1,25 @@
 @for (skill of skills; track $index) {
   <div class="row skill">
-    <div class="col-3">
+    <div class="col-3 label-div">
       <span class="label">{{ skill.label }}</span>
     </div>
     <div class="col">
-      <div class="rating">
-        @for (r of ratingCount; track $index) {
-          <div class="icon">
-            @if ($index < skill.rating) {
-              <i class="bi bi-circle-fill"></i>
+      @switch (skill.skillType) {
+        @case (skillTypes.NOTE) {
+          <span>{{ skill.note }}</span>
+        }
+        @case (skillTypes.RATING) {
+          <div class="rating">
+            @for (r of ratingCount; track $index) {
+              <div class="icon">
+                @if ($index < skill.rating) {
+                  <i class="bi bi-circle-fill"></i>
+                }
+              </div>
             }
           </div>
         }
-      </div>
+      }
     </div>
   </div>
 }
