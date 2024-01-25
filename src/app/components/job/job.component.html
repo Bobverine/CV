@@ -4,23 +4,33 @@
   </div>
   <div class="client-address">
     <span class="subtitle">{{ job.client }}</span>
-    <i class="bi bi-geo-alt"></i>
+    <i class="bi bi-geo-alt-fill text-danger text-opacity-75"></i>
     <span class="address">
-      {{ job.address.city }}, {{ job.address.country }}</span
-    >
+      {{ job.address.city }}
+    </span>
   </div>
 </div>
 <div class="d-flex justify-content-between">
   <div>
     <span class="project">{{ job.project }}</span>
   </div>
-  <div>
-    <span class="date">{{ date }}</span>
+  <div class="d-flex column-gap-2">
+    <div><i class="bi bi-calendar3"></i></div>
+    <div>
+      <span class="date">{{ date }}</span>
+    </div>
   </div>
 </div>
-<div>
-  <p>{{ job.description }}</p>
-</div>
-<ul class="list">
-  <li *ngFor="let task of job.tasks">{{ task | capitalize }}</li>
-</ul>
+@if (job.description) {
+  <div class="d-flex column-gap-2 mt-2">
+    <div><i class="bi bi-info-circle-fill text-info text-opacity-75"></i></div>
+    <div>
+      <span>{{ job.description }}</span>
+    </div>
+  </div>
+}
+@if (job.tasks.length) {
+  <ul class="list">
+    <li *ngFor="let task of job.tasks">{{ task | capitalize }}</li>
+  </ul>
+}

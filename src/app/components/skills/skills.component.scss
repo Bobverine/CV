@@ -12,18 +12,9 @@
 
 .rating {
   display: flex;
-  align-items: center;
-  column-gap: 0.2rem;
+  column-gap: 0.3rem;
 }
 
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1.7rem;
-  width: 1.7rem;
-  padding: 0 0.2rem;
-  border: 2px solid var(--bs-green);
-  border-radius: var(--bs-border-radius-pill);
+.bi {
   color: var(--bs-green);
 }

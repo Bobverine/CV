@@ -1,0 +1,12 @@
+@for (hobby of hobbies; track $index) {
+  <div class="row mb-2">
+    <!-- <div class="col-1">
+      @if (hobby.icon) {
+        <i class="bi" [className]="hobby.icon"></i>
+      }
+    </div> -->
+    <div class="col">
+      <span>{{ hobby.label }}</span>
+    </div>
+  </div>
+}

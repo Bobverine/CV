@@ -4,9 +4,17 @@
 <div>
   <span class="subtitle">{{ training.school }}</span>
 </div>
-<div>
-  <span class="address date"
-    >{{ training.address.city }}, {{ training.address.country }} |
-    {{ date }}</span
-  >
+<div class="d-flex justify-content-between">
+  <div class="d-flex column-gap-2">
+    <div><i class="bi bi-geo-alt-fill text-danger text-opacity-75"></i></div>
+    <div>
+      <span class="address">{{ training.address.city }}</span>
+    </div>
+  </div>
+  <div class="d-flex column-gap-2">
+    <div><i class="bi bi-calendar3"></i></div>
+    <div>
+      <span class="date">{{ date }}</span>
+    </div>
+  </div>
 </div>

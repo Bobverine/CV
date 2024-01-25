@@ -1,20 +1,25 @@
-<div class="mb-4">
-  <div>
-    <span class="name">{{ profile.firstname }} {{ profile.lastname }}</span>
-    <span class="age">{{ profile.age }} ans</span>
-  </div>
-  <div>
-    <span class="profile-title">{{ profile.title }}</span>
-  </div>
-</div>
 <div class="row">
-  <div class="col-5 bg-dark text-white p-4">
+  <div class="col-5 bg-dark text-light left-col">
+    <img class="photo" src="assets/images/hugof-cv-tmp.JPG" alt="" />
+    <section class="section">
+      <div>
+        <span class="name">{{ profile.firstname }} {{ profile.lastname }}</span>
+        <span class="age">{{ profile.age }} ans</span>
+      </div>
+      <div>
+        <span class="profile-title">{{ profile.title }}</span>
+      </div>
+    </section>
+    <section class="section">
+      <p class="expertise">{{ profile.expertise }}</p>
+      <p class="know-how">{{ profile.knowHow }}</p>
+    </section>
     <section class="section">
       <app-coordinates [coordinates]="coordinates"></app-coordinates>
     </section>
     <section class="section">
       <span class="section-title">Compétences</span>
-      <app-skills class="skills" [skills]="skills"></app-skills>
+      <app-skills [skills]="skills"></app-skills>
     </section>
     <section class="section">
       <span class="section-title">Formation</span>
@@ -24,20 +29,27 @@
         }
       </div>
     </section>
+    <section class="section">
+      <span class="section-title">Centres d'intérêt</span>
+      <app-hobbies [hobbies]="hobbies"></app-hobbies>
+    </section>
   </div>
-  <div class="col-7">
+  <div class="col-7 right-col">
     <section class="section">
       <span class="section-title">Expérience professionelle</span>
+      <div class="astek">
+        <img class="logo" src="assets/images/astek.png" alt="" />
+        <app-job class="job" [job]="astek"></app-job>
+      </div>
+      <div class="d-flex align-items-center column-gap-2">
+        <hr class="flex-grow-1" />
+        <div><span>Missions effectuées</span></div>
+        <hr class="flex-grow-1" />
+      </div>
       <div class="section-list">
         @for (job of jobs; track $index) {
           <app-job class="job" [job]="job"></app-job>
         }
-        <!-- @for (experience of experiences; track $index) {
-          <app-experience
-            class="experience"
-            [experience]="experience"
-          ></app-experience>
-        } -->
       </div>
     </section>
   </div>

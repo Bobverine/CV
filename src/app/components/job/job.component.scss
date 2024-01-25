@@ -5,4 +5,9 @@
 .client-address {
   display: flex;
   column-gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.title {
+  font-weight: bold;
 }

@@ -7,8 +7,10 @@
 }
 
 :root {
-  font-size: 12px;
+  font-size: 10px;
   --bs-font-sans-serif: RobotoRegular;
+  --hp: 5rem;
+  --vp: 5rem;
 }
 
 @page {
@@ -17,69 +19,16 @@
 }
 
 @media print {
+  html,
   body {
     width: 210mm;
     height: 297mm;
-    padding: 18mm 15mm;
-    border: 1px solid var(--bs-gray-300);
-  }
-}
-@media screen {
-  body {
-    padding: 3rem;
+    // border: 1px solid var(--bs-gray-300); // TODO remove
   }
 }
 
-.name {
-  text-transform: uppercase;
-  font-size: 2rem;
-}
-
-.age {
-  font-size: 1.5rem;
-  margin-left: 1rem;
-  color: var(--bs-secondary);
-}
-
-@media print {
-  .age,
-  .address,
-  .date {
-    color: var(--bs-secondary);
-  }
-}
-
-.profile-title {
-  font-size: 1.5rem;
-}
-
-.section {
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    border-bottom: solid var(--bs-green);
-    border-width: 2px;
-    margin-bottom: 0.5rem;
-  }
-
-  .section-list {
-    display: flex;
-    flex-direction: column;
-
-    & > * {
-      padding: 0.5rem 0;
-
-      &:not(:last-child) {
-        border-bottom: 1px dashed var(--bs-gray-300);
-      }
-    }
-  }
+body {
+  display: flex;
 }
 
 .title {

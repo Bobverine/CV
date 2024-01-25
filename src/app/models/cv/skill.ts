@@ -3,6 +3,7 @@ import { Rating } from "../utils/rating";
 enum ESkill {
   NOTE,
   RATING,
+  VALUE,
 }
 
 interface NoteSkill {
@@ -17,6 +18,12 @@ interface RatingSkill {
   rating: Rating;
 }
 
-type Skill = NoteSkill | RatingSkill;
+interface ValueSkill {
+  skillType: ESkill.VALUE;
+  label: string;
+  value: string;
+}
 
-export { ESkill, NoteSkill, RatingSkill, Skill };
+type Skill = NoteSkill | RatingSkill | ValueSkill;
+
+export { ESkill, NoteSkill, RatingSkill, Skill, ValueSkill };

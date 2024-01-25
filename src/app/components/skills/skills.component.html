@@ -11,13 +11,16 @@
         @case (skillTypes.RATING) {
           <div class="rating">
             @for (r of ratingCount; track $index) {
-              <div class="icon">
-                @if ($index < skill.rating) {
-                  <i class="bi bi-circle-fill"></i>
-                }
-              </div>
+              @if ($index < skill.rating) {
+                <i class="bi bi-circle-fill"></i>
+              } @else {
+                <i class="bi bi-circle"></i>
+              }
             }
           </div>
+        }
+        @case (skillTypes.VALUE) {
+          <span>{{ skill.value }}</span>
         }
       }
     </div>

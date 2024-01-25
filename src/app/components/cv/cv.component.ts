@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Coordinates } from "../../models/cv/coordinates";
 import { Experience } from "../../models/cv/experience";
+import { Hobby } from "../../models/cv/hobby";
 import { Profile } from "../../models/cv/profile";
 import { ESkill, Skill } from "../../models/cv/skill";
 import { Training } from "../../models/cv/training";
@@ -8,6 +9,7 @@ import { Job } from "../../models/dc/job";
 import { EPeriod } from "../../models/utils/period";
 import { CoordinatesComponent } from "../coordinates/coordinates.component";
 import { ExperienceComponent } from "../experience/experience.component";
+import { HobbiesComponent } from "../hobbies/hobbies.component";
 import { JobComponent } from "../job/job.component";
 import { SkillsComponent } from "../skills/skills.component";
 import { TrainingComponent } from "../training/training.component";
@@ -21,6 +23,7 @@ import { TrainingComponent } from "../training/training.component";
     SkillsComponent,
     CoordinatesComponent,
     JobComponent,
+    HobbiesComponent,
   ],
   templateUrl: "./cv.component.html",
   styleUrl: "./cv.component.scss",
@@ -86,32 +89,32 @@ export class CvComponent {
         country: "France",
       },
     },
-    {
-      title: "Développeur web fullstack",
-      period: {
-        periodType: EPeriod.YEAR_INTERVAL,
-        from: "2020",
-        to: "2020",
-        duration: 3,
-        durationUnit: "M",
-      },
-      client: "Kiwatch",
-      project: "Espace client",
-      description:
-        "Système de vidéosurveillance plug-and-play pour particuliers",
-      teamsAndMethods: "Agile - équipe de 4 développeurs",
-      tasks: [
-        "Développement du gestionnaire de caméras et de leur pilotage à distance",
-        "Refactorisation du code",
-        "Correction d'anomalies",
-        "étude de migration vers de nouveaux frameworks de développement",
-      ],
-      toolsAndTechnologies: ["Java 8 / Javascript"],
-      address: {
-        city: "Orvault",
-        country: "France",
-      },
-    },
+    // {
+    //   title: "Développeur web fullstack",
+    //   period: {
+    //     periodType: EPeriod.YEAR_INTERVAL,
+    //     from: "2020",
+    //     to: "2020",
+    //     duration: 3,
+    //     durationUnit: "M",
+    //   },
+    //   client: "Kiwatch",
+    //   project: "Espace client",
+    //   description:
+    //     "Système de vidéosurveillance plug-and-play pour particuliers",
+    //   teamsAndMethods: "Agile - équipe de 4 développeurs",
+    //   tasks: [
+    //     "Développement du gestionnaire de caméras et de leur pilotage à distance",
+    //     "Refactorisation du code",
+    //     "Correction d'anomalies",
+    //     "étude de migration vers de nouveaux frameworks de développement",
+    //   ],
+    //   toolsAndTechnologies: ["Java 8 / Javascript"],
+    //   address: {
+    //     city: "Orvault",
+    //     country: "France",
+    //   },
+    // },
     {
       title: "Développeur web fullstack",
       period: {
@@ -184,9 +187,9 @@ export class CvComponent {
         "Outil d'aide à la décision pour l'optimisation de la consommation de carburant d'un navire",
       teamsAndMethods: "Kanban - Binôme",
       tasks: [
-        "Refonte de l'ergonomie de l'interface avec le langage fonctionnelle Elm lang",
+        "Refonte de l'ergonomie de l'interface avec le langage fonctionnelle Elm",
         "Développement du tableau de comparaison des indices de performances",
-        "Retrait du Material Design au profit d'un CSS maison",
+        "Retrait du Material Design et de Bootstrap",
         "Développement d'un script Python générant des rapports CSV depuis un BDD PostgreSQL",
       ],
       toolsAndTechnologies: ["Angular 7 / D3js / HighCharts / Bitbucket"],
@@ -197,10 +200,31 @@ export class CvComponent {
     },
   ];
 
+  astek: Job = {
+    title: "Consultant",
+    period: {
+      periodType: EPeriod.YEAR_INTERVAL,
+      from: "2019",
+      to: "Aujourd'hui",
+      duration: 5,
+      durationUnit: "Y",
+    },
+    client: "Astek Nantes",
+    project: "Développement web",
+    description: "",
+    teamsAndMethods: "",
+    tasks: [],
+    toolsAndTechnologies: [],
+    address: {
+      city: "Saint-Herblain",
+      country: "France",
+    },
+  };
+
   trainings: Training[] = [
     {
       title: "Formation d'ingénieur en informatique & réseaux",
-      school: "ESIPE",
+      school: "École Supérieure d'Ingénieurs de Paris-Est (ESIPE)",
       address: {
         city: "Champs-sur-Marne",
         country: "France",
@@ -211,9 +235,6 @@ export class CvComponent {
         to: "2018",
       },
     },
-  ];
-
-  oldTrainings: Training[] = [
     {
       title: "DUT Informatique",
       school: "IUT Sénart-Fontainebleau",
@@ -227,6 +248,9 @@ export class CvComponent {
         to: "2015",
       },
     },
+  ];
+
+  oldTrainings: Training[] = [
     {
       title: "Baccalauréat, Série S spécialité SVT",
       school: "Lycée Gaspart-Monge",
@@ -296,7 +320,7 @@ export class CvComponent {
   coordinates: Coordinates = {
     phone: "+33 6 07 47 03 38",
     email: "hugo.feuillatre@gmail.com",
-    city: "Nantes",
+    city: "Quartier Île-de-Nantes",
   };
 
   profile: Profile = {
@@ -311,11 +335,32 @@ export class CvComponent {
     mobility: "Nantes",
   };
 
+  hobbies: Hobby[] = [
+    { label: "Permaculture" },
+    { label: "Escalade" },
+    { label: "Randonnée" },
+    { label: "Cuisine" },
+    { label: "Jeux vidéos (RPG, Story-driven)" },
+  ];
+
   skills: Skill[] = [
     { skillType: ESkill.RATING, label: "Angular", rating: 3 },
     { skillType: ESkill.RATING, label: "VueJS", rating: 3 },
     { skillType: ESkill.RATING, label: "Java", rating: 3 },
+    { skillType: ESkill.RATING, label: "HTML/CSS", rating: 3 },
     { skillType: ESkill.RATING, label: "Docker", rating: 2 },
+    { skillType: ESkill.RATING, label: "Elm", rating: 2 },
+    {
+      skillType: ESkill.VALUE,
+      label: "Langages, outils, frameworks",
+      value:
+        "Typescript, NodeJS, Spring Boot, ElasticSearch, SQL, Bash, JUnit, TestNG",
+    },
+    {
+      skillType: ESkill.VALUE,
+      label: "Dev Ops",
+      value: "Gitlab, Jenkins, BitBucket",
+    },
     { skillType: ESkill.NOTE, label: "Anglais", note: "B2" },
   ];
 }
