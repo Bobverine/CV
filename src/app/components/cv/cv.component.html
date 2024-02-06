@@ -19,6 +19,11 @@
     </section>
     <section class="section">
       <span class="section-title">Compétences</span>
+      <app-skills
+        [skills]="sortedSkills"
+        [isSorted]="true"
+        class="mb-2"
+      ></app-skills>
       <app-skills [skills]="skills"></app-skills>
     </section>
     <section class="section">

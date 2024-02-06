@@ -34,6 +34,32 @@ export class CvComponent {
       title: "Développeur web frontend",
       period: {
         periodType: EPeriod.YEAR_INTERVAL,
+        from: "2023",
+        to: "Aujourd'hui",
+        duration: 3,
+        durationUnit: "M",
+      },
+      client: "Association Clairs Horizon",
+      project: "Top chef de ma santé",
+      description:
+        "Projet de mécénat accompagnant des personnes ayant subit un cancer",
+      teamsAndMethods: "Kanban ~8 personnes",
+      tasks: [
+        "Refonte des pages en Angular et Ionic",
+        "Migration vers les dernières versions d'Angular et Ionic",
+      ],
+      toolsAndTechnologies: [
+        "Angular / Ionic / Bootstrap / Capacitor / Strapi / Azure Dev Ops",
+      ],
+      address: {
+        city: "Nantes",
+        country: "France",
+      },
+    },
+    {
+      title: "Développeur web frontend",
+      period: {
+        periodType: EPeriod.YEAR_INTERVAL,
         from: "2022",
         to: "2023",
         duration: 1.5,
@@ -76,7 +102,7 @@ export class CvComponent {
       teamsAndMethods:
         "Agile - 6 Equipes de 5 développeurs dont un Tech Lead + un testeur",
       tasks: [
-        "Développement et maintenance en Javascript et Node.JS du périmètre de la feature team",
+        "Développement et maintenance en Javascript et NodeJS du périmètre de la feature team",
         "VOD, pause du direct, clavier virtuel, choix de langue audio et sous-titres",
         "Refactorisation du code",
         "Amélioration de la qualité de code avec SonarQube",
@@ -343,18 +369,31 @@ export class CvComponent {
     { label: "Jeux vidéos (RPG, Story-driven)" },
   ];
 
+  sortedSkills: Skill[] = [
+    {
+      skillType: ESkill.VALUE,
+      label: "Notion",
+      value: "Haskell, Scala, C, PHP, Python",
+    },
+    {
+      skillType: ESkill.VALUE,
+      label: "Capacité partielle",
+      value: "Docker, Elm",
+    },
+    {
+      skillType: ESkill.VALUE,
+      label: "Capacité autonome",
+      value: "VueJS, HTML, Java, Typescript",
+    },
+    { skillType: ESkill.VALUE, label: "Expertise", value: "Angular, CSS" },
+  ];
+
   skills: Skill[] = [
-    { skillType: ESkill.RATING, label: "Angular", rating: 3 },
-    { skillType: ESkill.RATING, label: "VueJS", rating: 3 },
-    { skillType: ESkill.RATING, label: "Java", rating: 3 },
-    { skillType: ESkill.RATING, label: "HTML/CSS", rating: 3 },
-    { skillType: ESkill.RATING, label: "Docker", rating: 2 },
-    { skillType: ESkill.RATING, label: "Elm", rating: 2 },
     {
       skillType: ESkill.VALUE,
       label: "Langages, outils, frameworks",
       value:
-        "Typescript, NodeJS, Spring Boot, ElasticSearch, SQL, Bash, JUnit, TestNG",
+        "NodeJS, Spring Boot, ElasticSearch, SQL, Bash, JUnit, TestNG, SonarQube",
     },
     {
       skillType: ESkill.VALUE,

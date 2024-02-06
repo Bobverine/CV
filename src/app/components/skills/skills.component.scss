@@ -2,12 +2,31 @@
   display: block;
 }
 
-.label-div {
-  text-align: right;
+:host(.sorted) {
+  display: flex;
+  flex-direction: column-reverse;
+
+  .row {
+    align-items: center;
+
+    &:not(:last-child) {
+      border-top: 1px dashed var(--bs-gray);
+      border-bottom: none;
+    }
+  }
 }
 
-:not(:last-child).skill {
-  margin-bottom: 0.5rem;
+.row {
+  padding: 0.5rem 0;
+}
+
+.ranked-label-div {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  justify-content: flex-end;
+  column-gap: 1rem;
+  align-items: center;
 }
 
 .rating {

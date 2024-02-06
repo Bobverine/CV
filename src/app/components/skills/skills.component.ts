@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, HostBinding, Input } from "@angular/core";
 import { ESkill, Skill } from "../../models/cv/skill";
 
 @Component({
@@ -11,6 +11,10 @@ import { ESkill, Skill } from "../../models/cv/skill";
 export class SkillsComponent {
   @Input()
   skills!: Skill[];
+
+  @HostBinding("class.sorted")
+  @Input()
+  isSorted!: boolean;
 
   ratingCount: [] = [].constructor(4);
 

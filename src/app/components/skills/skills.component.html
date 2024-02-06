@@ -1,7 +1,24 @@
-@for (skill of skills; track $index) {
-  <div class="row skill">
-    <div class="col-3 label-div">
-      <span class="label">{{ skill.label }}</span>
+@for (skill of skills; track skillIndex; let skillIndex = $index) {
+  <div class="row">
+    <div class="col-5" [class.text-end]="!isSorted">
+      @if (!isSorted) {
+        <span class="label">{{ skill.label }}</span>
+      } @else {
+        <div class="ranked-label-div">
+          <div>
+            <span class="label">{{ skill.label }}</span>
+          </div>
+          <div class="rating">
+            @for (r of ratingCount; track rIndex; let rIndex = $index) {
+              @if (rIndex < skillIndex + 1) {
+                <i class="bi bi-circle-fill"></i>
+              } @else {
+                <i class="bi bi-circle"></i>
+              }
+            }
+          </div>
+        </div>
+      }
     </div>
     <div class="col">
       @switch (skill.skillType) {

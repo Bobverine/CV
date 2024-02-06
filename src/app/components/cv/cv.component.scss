@@ -96,3 +96,15 @@
     }
   }
 }
+
+.left-col {
+  .section {
+    .section-list {
+      & > * {
+        &:not(:last-child) {
+          border-bottom-color: var(--bs-gray);
+        }
+      }
+    }
+  }
+}
