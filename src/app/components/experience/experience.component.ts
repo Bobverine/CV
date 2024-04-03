@@ -1,4 +1,3 @@
-import { NgFor } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 import { Experience } from "../../models/cv/experience";
 import { EPeriod, Period } from "../../models/utils/period";
@@ -6,7 +5,6 @@ import { EPeriod, Period } from "../../models/utils/period";
 @Component({
   selector: "app-experience",
   standalone: true,
-  imports: [NgFor],
   templateUrl: "./experience.component.html",
   styleUrl: "./experience.component.scss",
 })

@@ -11,5 +11,7 @@
   >
 </div>
 <ul class="list">
-  <li *ngFor="let task of experience.tasks">{{ task }}</li>
+  @for (task of experience.tasks; track $index) {
+    <li>{{ task }}</li>
+  }
 </ul>

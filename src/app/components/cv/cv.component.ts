@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from "@angular/common";
 import { Component } from "@angular/core";
 import { Coordinates } from "../../models/cv/coordinates";
 import { Experience } from "../../models/cv/experience";
@@ -24,29 +25,35 @@ import { TrainingComponent } from "../training/training.component";
     CoordinatesComponent,
     JobComponent,
     HobbiesComponent,
+    NgOptimizedImage,
   ],
   templateUrl: "./cv.component.html",
   styleUrl: "./cv.component.scss",
 })
 export class CvComponent {
-  jobs: Job[] = [
+  firstPageJobs: Job[] = [
     {
-      title: "Développeur web frontend",
+      title: "Développeur web frontend / Lead tech Angular",
       period: {
         periodType: EPeriod.YEAR_INTERVAL,
         from: "2023",
         to: "Aujourd'hui",
-        duration: 3,
+        duration: 6,
         durationUnit: "M",
       },
       client: "Association Clairs Horizon",
       project: "Top chef de ma santé",
       description:
-        "Projet de mécénat accompagnant des personnes ayant subit un cancer",
+        "Projet de mécénat sur le développement d'un site permettant à l'aide d'un ensemble de questionnaire de suivre l'état de santé de personnes ayant subit une maladie lourde",
       teamsAndMethods: "Kanban ~8 personnes",
       tasks: [
-        "Refonte des pages en Angular et Ionic",
-        "Migration vers les dernières versions d'Angular et Ionic",
+        "Refonte des pages en Angular et Ionic afin d'améliorer la qualité de code",
+        "Migration d'Angular 14 et Ionic 4 vers Angular 17 et Ionic 7",
+        "Retrait des NgModule au profit des composants standalone",
+        "Amélioration de la détection du changement en introduisant les signaux Angular",
+        "Formation des nouveaux développeurs",
+        "Mise en place des bonnes pratiques de développement et du processus de revue de code",
+        "Mise en place d'une réunion hebdomadaire sur la veille technologique",
       ],
       toolsAndTechnologies: [
         "Angular / Ionic / Bootstrap / Capacitor / Strapi / Azure Dev Ops",
@@ -70,16 +77,18 @@ export class CvComponent {
       description:
         "Migration de Liferay et refonte de l'interface VueJS pour le portail d'assurance vie Suravenir",
       teamsAndMethods:
-        "Agile ~15 personnes, CDP, PPOs / testeurs, 10 développeurs",
+        "Agile, sprint d'un mois, CDP, PPOs / testeurs, ~10 devs",
       tasks: [
-        "Développement des portlets Rachat et Souscription",
-        "Développement de formulaire multi-étapes et système de cache",
+        "Développement des portlets Rachat et Souscription : applications VueJS déployées dynamiquement depuis le CMS Liferay",
+        "Développement de formulaire multi-étapes et de son système de cache",
         "Intégration des règles métier de l'assurance vie",
-        "Correction d'anomalies",
-        "Accompagnement de juniors",
+        "Évolution de la librairie de composants et des thèmes des portails",
+        "Écriture de mappers REST / SOAP en Java",
+        "Correction d'anomalies en collaboration avec le client",
+        "Accompagnement de juniors : explication des processus de revue de code, apprentissage des bonnes pratiques de développement",
       ],
       toolsAndTechnologies: [
-        "Java / Gradle / Liferay / VueJS / SCSS / Yarn / IntelliJ / Gitlab",
+        "Java / Gradle / Liferay / VueJS / Vuex / SCSS / Yarn / IntelliJ / Gitlab",
       ],
       address: {
         city: "Nantes",
@@ -100,10 +109,10 @@ export class CvComponent {
       description:
         "Développement des interfaces multi-écrans pour décodeurs et Smart TV",
       teamsAndMethods:
-        "Agile - 6 Equipes de 5 développeurs dont un Tech Lead + un testeur",
+        "Agile, sprint de 2 semaines, 6 Equipes de 5 développeurs dont un tech lead + un testeur",
       tasks: [
-        "Développement et maintenance en Javascript et NodeJS du périmètre de la feature team",
-        "VOD, pause du direct, clavier virtuel, choix de langue audio et sous-titres",
+        "Développement en NodeJS sur le framework interne de Wiztivi du périmètre de la feature team",
+        "Développement du clavier virtuel multilingue utilisable par une télécommande",
         "Refactorisation du code",
         "Amélioration de la qualité de code avec SonarQube",
         "Mise en place des bonnes pratiques de développement",
@@ -115,32 +124,39 @@ export class CvComponent {
         country: "France",
       },
     },
-    // {
-    //   title: "Développeur web fullstack",
-    //   period: {
-    //     periodType: EPeriod.YEAR_INTERVAL,
-    //     from: "2020",
-    //     to: "2020",
-    //     duration: 3,
-    //     durationUnit: "M",
-    //   },
-    //   client: "Kiwatch",
-    //   project: "Espace client",
-    //   description:
-    //     "Système de vidéosurveillance plug-and-play pour particuliers",
-    //   teamsAndMethods: "Agile - équipe de 4 développeurs",
-    //   tasks: [
-    //     "Développement du gestionnaire de caméras et de leur pilotage à distance",
-    //     "Refactorisation du code",
-    //     "Correction d'anomalies",
-    //     "étude de migration vers de nouveaux frameworks de développement",
-    //   ],
-    //   toolsAndTechnologies: ["Java 8 / Javascript"],
-    //   address: {
-    //     city: "Orvault",
-    //     country: "France",
-    //   },
-    // },
+    {
+      title: "Développeur web fullstack",
+      period: {
+        periodType: EPeriod.YEAR_INTERVAL,
+        from: "2020",
+        to: "2020",
+        duration: 3,
+        durationUnit: "M",
+      },
+      client: "Kiwatch",
+      project: "Espace client",
+      description:
+        "Système de vidéosurveillance plug-and-play pour particuliers",
+      teamsAndMethods:
+        "Agile, sprint d'une semaine, équipe de 4 développeurs dont 1 SM",
+      tasks: [
+        "Développement responsive desktop & mobile en Javascript pure",
+        "Développement du gestionnaire de caméras",
+        "Développement du pilotage des caméras à distance à l'aide du clavier et de la souris",
+        "Développement du système d'alerte anti-intrusion par email",
+        "étude de migration vers de nouveaux frameworks de développement",
+        "Refactorisation du code",
+        "Correction d'anomalies",
+      ],
+      toolsAndTechnologies: ["Java 8 / Javascript"],
+      address: {
+        city: "Orvault",
+        country: "France",
+      },
+    },
+  ];
+
+  secondPageJobs: Job[] = [
     {
       title: "Développeur web fullstack",
       period: {
@@ -154,13 +170,16 @@ export class CvComponent {
       project: "Analytics & Datalake",
       description:
         "Application web permettant d'observer en temps réel les indices de performances des lignes de production",
-      teamsAndMethods: "Agile - équipe de 6 développeurs",
+      teamsAndMethods:
+        "Agile, sprint de 3 semaines, 6 développeurs dont SM & PPO + 1 designeur, 1 testeur",
       tasks: [
-        "Développement d'une librairie Angular générant les graphes en SVG",
-        "Développement d'une librairie Angular de tableaux complexes en vue arborescente et triables",
+        "Développement de la librairie Angular générant les graphes en SVG à l'aide de D3js",
+        "Développement de la librairie Angular de tableaux responsive en vue arborescente, triables, filtrables et éditables",
+        "Développement transverse (ElasticSearch, Java, Angular) du graphique présentant le nombre d'employés présents par ligne de production, poste et bâtiment",
         "évolution du BE sous Spring Boot",
         "écriture de requêtes ElasticSearch",
-        "écriture de tests front-end et back-end",
+        "écriture de tests front-end et back-end (~1000 en tout)",
+        "Migration d'Angular 8 vers 9",
         "Correction d'anomalies",
       ],
       toolsAndTechnologies: [
@@ -184,13 +203,19 @@ export class CvComponent {
       project: "Benchmark DC",
       description:
         "Site de référence de salaire avec filtrage par découpages administratifs, secteur d'activité, taille d'entreprise",
-      teamsAndMethods: "Autonome - accompagnement ponctuel d'un alternant",
+      teamsAndMethods:
+        "Autonome - accompagnement d'un alternant en informatique",
       tasks: [
-        "Développement de l'IHM avec Angular et de la carte avec D3js",
+        "Auto-formation du framework Angular",
+        "Développement de l'interface avec Angular et la librairie de composants d'ADP",
+        "Développement de la carte avec D3js",
         "Paramétrage des graphiques avec HighCharts",
-        "Développement des fonctionnalités d'export vers divers formats",
+        "Développement des fonctionnalités d'export vers les formats PDF & CSV",
+        "Collaboration avec le développeur back-end travaillant le site ADP de Grenoble",
+        "Accompagnement d'un alternant en informatique",
         "Mise en production",
         "écriture de la documentation",
+        "Passation du projet",
       ],
       toolsAndTechnologies: ["Angular 7 / D3js / HighCharts / Bitbucket"],
       address: {
@@ -213,12 +238,15 @@ export class CvComponent {
         "Outil d'aide à la décision pour l'optimisation de la consommation de carburant d'un navire",
       teamsAndMethods: "Kanban - Binôme",
       tasks: [
-        "Refonte de l'ergonomie de l'interface avec le langage fonctionnelle Elm",
+        "Auto-formation du langage Elm",
+        "Retrait du Material Design et de Bootstrap au profit d'un CSS personnalisé et de flexbox",
+        "Refonte de l'ergonomie de l'interface",
         "Développement du tableau de comparaison des indices de performances",
-        "Retrait du Material Design et de Bootstrap",
         "Développement d'un script Python générant des rapports CSV depuis un BDD PostgreSQL",
       ],
-      toolsAndTechnologies: ["Angular 7 / D3js / HighCharts / Bitbucket"],
+      toolsAndTechnologies: [
+        "Docker / RabbitMQ / Elm / Python / Leaflet / Gitlab / PostgreSQL",
+      ],
       address: {
         city: "Bouguenais",
         country: "France",
@@ -393,7 +421,7 @@ export class CvComponent {
       skillType: ESkill.VALUE,
       label: "Langages, outils, frameworks",
       value:
-        "NodeJS, Spring Boot, ElasticSearch, SQL, Bash, JUnit, TestNG, SonarQube",
+        "Ionic, NodeJS, Spring Boot, ElasticSearch, SQL, Bash, JUnit, TestNG, SonarQube",
     },
     {
       skillType: ESkill.VALUE,
